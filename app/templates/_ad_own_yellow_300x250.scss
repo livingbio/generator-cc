@@ -1,0 +1,189 @@
+$width : 298px;
+$height : 248px;
+$hint_height : 50px;
+$title_height : 60px;
+$img_height : 135px;
+$body_height : 200px;
+$body_width : 220px;
+$offer_price_width : 50px;
+$img_footer_height : 220px;
+$img_footer_width : 55px;
+$img_footer_page_height : 55px;
+$button_height : 15px;
+$button_width : 25px;
+$img_footer_num : 4;
+$item_height : $body_height;
+$hint_width : $body_width;
+$img_width : $body_width;
+$title_width : $body_width;
+$thumb_width : $img_height;
+$thumb_height : $img_height;
+$desc_height : $item_height - $img_height - 5;
+$desc_width : $width - $img_footer_width - 23;
+$img_footer_body_width : $width - $body_width;
+$button_top : ($img_footer_height - $button_width) / 2;
+$img_footer_page_width : $img_footer_page_height;
+$img_footer_div : $img_footer_page_height;
+
+
+@import "../_wilson_mixin";
+@import "../base";
+
+input,select{
+  margin-right:15px;
+}
+
+.z1{
+    border: 1px solid #CCCCCC
+}
+
+.z2{
+  margin-left: 60px;
+}
+
+.number{
+  width:50px;
+}
+
+.text{
+  width:300px;
+}
+
+.adframe{
+    @include wh($width,$height);
+    @include box_sizing();
+    position: relative;
+    border: 1px solid #CCCCCC;
+    overflow: hidden;
+    background-color: #FFF;
+    .tagtoo_tag{
+        @include tagtoo_tag($width)
+    }
+}
+
+.hint{
+    @include wh($hint_width,$hint_height);
+    @include center($hint_width,$hint_height);
+    @include position(absolute,198px,false,false,0);
+    border: 1px solid #CCCCCC;
+    @include bg(url() no-repeat);
+    img{
+        @include max-wh($hint_width,$hint_height);
+        cursor: pointer;
+    }
+}
+
+.item_body{
+    @include position(absolute);
+    @include wh($body_width,$body_height);
+    overflow: hidden;
+}
+
+.item{
+    @include wh($body_width,$body_height);
+    @include item();
+}
+
+.item_img{
+    @include position(absolute,0px,false,false,42.5px);
+    @include wh(135px,135px);
+    img {
+        @include max-wh(100%,100%);
+    }
+}
+
+.store_price{
+    @include price(12px,black);
+    @include position(absolute,180px,false,false,5px);
+}
+
+.store_price_number{
+    @include font(black,13px,100,Arial);
+    text-decoration:line-through;
+    &:before{
+        content:"";
+        font-family: \5FAE\8EDF\6B63\9ED1\9AD4;
+        font-size: 12px;
+    }
+    &:after{
+        content:"";
+        font-family: \5FAE\8EDF\6B63\9ED1\9AD4;
+        font-size: 12px;
+    }
+}
+
+.offer_price{
+    @include price(12px,black);
+    @include position(absolute,180px,false,false,155px);
+}
+
+.offer_price_number{
+    @include font(red,16px,600,Arial);
+    &:before{
+        content:"";
+        font-family: \5FAE\8EDF\6B63\9ED1\9AD4;
+        font-size: 16px;
+    }
+    &:after{
+        content:"";
+        font-family: \5FAE\8EDF\6B63\9ED1\9AD4;
+        font-size: 12px;
+    }
+}
+
+.desc{
+    @include position(absolute,135px,false,false,0px);
+    @include wh(100%,100%);
+}
+
+.item_title{
+    @include position(absolute,135px,false,false,0px);
+    @include title(RGB(255,92,0));
+}
+
+.img_footer{
+    @include position(absolute,0,false,false,220px);
+    @include wh($img_footer_body_width,$height);
+    @include bg(url(http://lh4.ggpht.com/vC5o_PoJ17DZt0Q06zxVTzQ8LX2oM-4OWBjMemdTiI5Xp7rjqO8t3lassfCwOL7KELskdoAl3FijKtgfZDh-ZFs) repeat-y);
+    // overflow: hidden;
+}
+
+.footer_top_button{
+    @include wh($button_width,$button_height);
+    @include bg(url(http://lh4.ggpht.com/iR_QTG5zHBs6nFrw-p2-erHsnJ50qoRUKroRY8XrYsnedLpKNoIRjIjGUYXpE6vPSB1P9Gg498ftcWQf3xIQrVs) no-repeat);
+    margin: auto;
+    cursor: pointer;
+}
+
+.img_footer_body{
+    @include wh($img_footer_div,$img_footer_div * $img_footer_num);
+    margin: auto;
+    overflow: hidden;
+    ul{
+        @include wh($img_footer_div,$img_footer_div * $img_footer_num );
+        .img_footer_page{
+            float: left;
+            position: relative;
+            @include wh($img_footer_div,$img_footer_div);
+            // @include center($img_footer_div,$img_footer_div);
+            img{
+                @include wh($img_footer_div,$img_footer_div);
+            }
+        }
+    }
+}
+
+.footer_bottom_button{
+    @include wh($button_width,$button_height);
+    @include bg(url(http://lh5.ggpht.com/EV4-GcBkaESREHrcr36kXzZBfzH1xGCTf5o0tbfBeY9YN3b4HJtLrbqKVZPgWTf-FW0mSerw-eizh_hrqwl_y94) no-repeat);
+    margin: auto;
+    cursor: pointer;
+}
+
+.focus{
+    @include focus();
+}
+.no_focus{
+    @include no_focus();
+    border: 0px double black;
+}

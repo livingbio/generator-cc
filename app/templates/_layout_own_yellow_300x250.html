@@ -1,0 +1,69 @@
+<div class="adframe" style="outline:{{=it.layout.border_width}}px {{=it.layout.border_style}} {{=it.layout.border_color}};width:{{=it.layout.width}}px;height:{{=it.layout.height}}px;background-color:{{=it.layout.background_color}}">
+    <a href="//www.tagtoo.com.tw/" target="_blank">
+        <div id="tagtoo_tag" class="tagtoo_tag"></div>
+    </a>
+
+    {{?it.layout.ad_top}}
+    <div class="ad_top">
+        <div class="hint"><img ></div>
+        <div class="text">{{=it.layout.text}}</div>
+    </div>
+    {{?}}
+
+    <div class="ad_bottom {{?it.layout.ad_top}} ad_top_true {{?}}">
+        <div class="item_body" >
+            {{~it.ads:v:i}}
+            <div class="item" title="{{=v.title}}" id="item-{{=i}}">
+                <div class="item_img" >
+                    <a target="_blank" class="link" title="{{=v.title}}" href="javascript:void(0);">
+                        <img class="thumb" border="0" title="{{=v.title}}" src="{{=v.image_url}}"/>
+                    </a>
+                </div>
+                <div class="item_wraper">
+                    <div class="item_title" title="{{=v.title}}">
+                        <a target="_blank" class="link" title="{{=v.title}}" href="javascript:void(0);">{{=v.title_short}}</a>
+                    </div>
+
+                    {{? Number(v.store_price)}}
+                    <div class="store_price">
+                        <span class="pre_store_price">{{=it.layout.pre_store_price}}</span><span class="store_price_number" >{{=v.store_price}}</span>
+                    </div>
+                    {{?}}
+
+                    {{? Number(v.price)}}
+                    <div class="offer_price">
+                        <span class="pre_price">{{=it.layout.pre_price}}</span><span class="offer_price_number" >${{=v.price}}</span>
+                    </div>
+                    {{?}}
+                    <div class="item_click link">{{=it.layout.item_click_text}}</div>
+                </div>
+            </div>
+            {{~}}
+        </div>
+        <div class="img_footer" >
+            <div class="footer_top_button" >
+                <div class="circle">
+                    <div class="triangle"></div>
+                </div>
+            </div>
+            <div class="img_footer_body" >
+                <ul>
+                    {{~it.ads:v:i}}
+                    <li id="img_footer_page_{{=i}}" class="img_footer_page" >
+                            <img src="{{=v.image_url}}" >
+                            <div class="no_focus" ></div>
+                    </li>
+                    {{~}}
+                </ul>
+            </div>
+            <div class="footer_bottom_button" >
+                <div class="circle">
+                    <div class="triangle"></div>
+                </div>
+            </div>
+            <div class="sep"></div>
+        </div>
+    </div>
+</div>
+
+
