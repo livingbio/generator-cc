@@ -1,0 +1,36 @@
+{% extends "ad/ad_new_base.html" %}
+
+<% if (typeof(basic) != "undefined") { %><%= basic %><% } %>
+<% if (typeof(house) != "undefined") { %><%= house %><% } %>
+<% if (typeof(people) != "undefined") { %><%= people %><% } %>
+<% if (typeof(google) != "undefined") { %><%= google %><% } %>
+
+{% macro CAMPAIGN(name='<%= name %>') %}{{ name }}{% endmacro %}
+
+{% block css %}
+
+    <link id="ad_own_{{ CAMPAIGN() }}" rel="stylesheet" href="/static/ad/css/ad_own/ad_own_{{ CAMPAIGN() }}.css" type="text/css">
+
+    <% if (typeof(basic) != "undefined") { %>{{ basic_CSS() }}<% } %>
+    <% if (typeof(house) != "undefined") { %>{{ google_CSS() }}<% } %>
+    <% if (typeof(people) != "undefined") { %>{{ house_CSS() }}<% } %>
+    <% if (typeof(google) != "undefined") { %>{{ people_CSS() }}<% } %>
+
+{% endblock %}
+
+{% block content %}
+    <script type="text/javascript" src="/static/ad/js/highlight.js"></script>
+    <script type="text/javascript" src="/static/ad/js/footer_scroll.js"></script>
+    <script type="text/javascript" src="/static/ad/js/hover.js"></script>
+    <script type="text/javascript" src="/static/ad/js/slideshow.js"></script>
+    <script type="text/javascript">
+    {% raw %} Tagtoo.pagefn = {{ {% endraw %} js_template('ad/layout/layout_own_{{ CAMPAIGN() }}.html') {% raw %} }}; {% endraw %}
+    </script>
+
+    <% if (typeof(basic) != "undefined") { %>{{ basic_JS() }}<% } %>
+    <% if (typeof(google) != "undefined") { %>{{ google_JS('<%= thumbnail %>') }}<% } %>
+    <% if (typeof(house) != "undefined") { %>{{ house_JS() }}<% } %>
+    <% if (typeof(people) != "undefined") { %>{{ people_JS() }}<% } %>
+    {{ common_JS() }}
+
+{% endblock %}

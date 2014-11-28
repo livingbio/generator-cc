@@ -1,14 +1,13 @@
 {
   "name": "generator-cc",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Yeoman generator",
   "license": "MIT",
   "main": "app/index.js",
   "repository": "someuser/generator-cc",
   "author": {
-    "name": "",
-    "email": "",
-    "url": "https://github.com/someuser"
+    "email": "wilson20120311@gmail.com",
+    "url": "https://github.com/Tagtoo/generator-cc"
   },
   "engines": {
     "node": ">=0.10.0"
@@ -20,7 +19,8 @@
     "app"
   ],
   "keywords": [
-    "yeoman-generator"
+    "yeoman-generator",
+    "cc"
   ],
   "dependencies": {
     "yeoman-generator": "^0.17.0",

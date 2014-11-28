@@ -1,4 +1,4 @@
-# generator-cc [![Build Status](https://secure.travis-ci.org/someuser/generator-cc.png?branch=master)](https://travis-ci.org/someuser/generator-cc)
+# CC generator
 
 > [Yeoman](http://yeoman.io) generator
 
